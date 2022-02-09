@@ -21,6 +21,6 @@ async function getMember() {
     backName.innerText = `${member.data[0].name} ${member.data[0].surname}`
     githubHandleEL.href = member.data[0].githubHandle;
     urlEL.href = member.data[0].url;
+    bioEl.innerText = member.data[0]
     image.src = member.data[0].avatar;
-
 }
