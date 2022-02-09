@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
@@ -28,6 +27,7 @@ main {
   position: relative;
   width: 600px;
   height: 350px;
+  perspective: 800px;
 }
 
 #card {
@@ -37,18 +37,11 @@ main {
   width: 100%;
   height: 100%;
   transition: 0.4s ease;
+  transform-style: preserve-3d;
 }
 
 .card-rotate {
-  transform: perspective(400px) rotateY(180deg);
-}
-
-.card-rotate > #card-front {
-  visibility: hidden;
-}
-
-.card-rotate > #card-back {
-  visibility: visible;
+  transform: rotateY(180deg);
 }
 
 /* CARD FRONT */
@@ -98,13 +91,15 @@ main {
   text-transform: uppercase;
 }
 
+.card-rotate {
+}
+
 /* CARD BACK */
 
 #card-back {
   border-radius: 1rem;
-  transform: scale(-1, 1);
-  visibility: hidden;
   position: absolute;
+  backface-visibility: hidden;
   top: 0;
 
   width: 100%;
@@ -112,6 +107,7 @@ main {
   background-color: var(--dark-purple);
   color: var(--white);
   text-align: right;
+  transform: rotateY(180deg);
 
   display: flex;
   font-size: 1rem;
@@ -125,6 +121,7 @@ main {
 ul {
   list-style: none;
   text-align: right;
+  font-weight: bold;
 }
 
 li {
@@ -137,16 +134,15 @@ li a {
   font-size: 16px;
 }
 
+.text-container {
+  flex: 1;
+}
+
 figure {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center; 
-  border-left: 1px solid #fff;
-}
-
-figure > img {
-  margin-right: 3em;
+  align-items: center;
 }
 
 #card-back .circle {
@@ -161,6 +157,6 @@ figure > img {
 figcaption {
   position: absolute;
   bottom: 10px;
-  color: #fff;
-  font-weight: 200;
+  color: var(--white);
+  font-weight: bold;
 }
