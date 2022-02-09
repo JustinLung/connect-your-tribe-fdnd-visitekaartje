@@ -29,6 +29,7 @@ main {
   width: 600px;
   height: 350px;
   perspective: 800px;
+  -webkit-perspective: 800px;
 }
 
 #card {
