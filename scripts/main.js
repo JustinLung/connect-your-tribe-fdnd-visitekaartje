@@ -15,8 +15,13 @@ card.addEventListener("click", function () {
 
 // FUNCTIONS
 async function getMember() {
-    const req = await fetch(`${API_URL}/member`);
+    try {
+        const req = await fetch(`${API_URL}/member`)
+    } catch(err) {
+        alert("API is not working");
+    }
     const member = await req.json();
+
     nameEl.innerText = member.data[0].name;
     backName.innerText = `${member.data[0].name} ${member.data[0].surname}`
     githubHandleEL.href = member.data[0].githubHandle;

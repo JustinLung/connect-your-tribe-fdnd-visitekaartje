@@ -1,3 +1,6 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
   --dark-purple: #2e294e;
   --light-purple: #be97c6;
@@ -7,11 +10,9 @@
   --white: #ffff;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 body {
   background-color: var(--marine);
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   padding: 0;
   margin: 0;
 
@@ -31,11 +32,11 @@ main {
 
 #card {
   cursor: pointer;
-  background-color: #353535;
+  background-color: var(--dark-purple);
   border-radius: 1rem;
   width: 100%;
   height: 100%;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 .card-rotate {
@@ -69,7 +70,7 @@ main {
 #card-front .circle {
   height: 220px;
   width: 220px;
-  background-color: #bbb;
+  background-color: var(--pink);
   border-radius: 50%;
 
   display: flex;
@@ -81,7 +82,7 @@ main {
   position: absolute;
   height: 180px;
   width: 180px;
-  background-color: #353535;
+  background-color: var(--dark-purple);
   border-radius: 50%;
 
   display: flex;
@@ -90,7 +91,7 @@ main {
 }
 
 #card-front h1 {
-  color: #fff;
+  color: var(--pink);
   text-shadow: 0px 3px 7px #000;
   font-size: 70px;
   text-align: center;
@@ -108,9 +109,17 @@ main {
 
   width: 100%;
   height: 100%;
-  background-color: #353535;
+  background-color: var(--dark-purple);
+  color: var(--white);
+  text-align: right;
 
   display: flex;
+  font-size: 1rem;
+}
+
+#card-back > div {
+  margin: auto;
+  padding: 1.5em;
 }
 
 ul {
@@ -132,9 +141,12 @@ figure {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  align-items: center; 
   border-left: 1px solid #fff;
+}
+
+figure > img {
+  margin-right: 3em;
 }
 
 #card-back .circle {
@@ -144,8 +156,6 @@ figure {
   background-position: 60% 45%;
   background-repeat: no-repeat;
   border-radius: 50%;
-
-  filter: drop-shadow(0px 1px 4px #000);
 }
 
 figcaption {
