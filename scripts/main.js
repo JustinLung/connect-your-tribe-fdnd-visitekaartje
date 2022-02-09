@@ -7,6 +7,7 @@ const bioEl = document.getElementById("bio");
 const githubHandleEL = document.getElementById("githubHandle");
 const urlEL = document.getElementById("url");
 const card = document.querySelector("#card");
+const errorHandling = document.querySelector(".error");
 
 getMember();
 card.addEventListener("click", function () {
@@ -17,15 +18,23 @@ card.addEventListener("click", function () {
 async function getMember() {
     try {
         const req = await fetch(`${API_URL}/member`)
-    } catch(err) {
-        alert("API is not working");
+        const member = await req.json();
+        render(member)
+    } catch (err) {
+        errorHandling.style.opacity = 1;
+        errorHandling.style.transform = "translateX(0)";
+        setTimeout(() => {
+            errorHandling.style.opacity = 0
+            errorHandling.style.transform = "translateX(4em)";
+        }, 5000);
     }
-    const member = await req.json();
+}
 
-    nameEl.innerText = member.data[0].name;
-    backName.innerText = `${member.data[0].name} ${member.data[0].surname}`
-    githubHandleEL.href = member.data[0].githubHandle;
-    urlEL.href = member.data[0].url;
-    bioEl.innerText = member.data[0]
-    image.src = member.data[0].avatar;
+function render(data) {
+    nameEl.innerText = data.data[0].name;
+    backName.innerText = `${data.data[0].name} ${data.data[0].surname}`
+    githubHandleEL.href = data.data[0].githubHandle;
+    urlEL.href = data.data[0].url;
+    bioEl.innerText = data.data[0]
+    image.src = data.data[0].avatar;
 }

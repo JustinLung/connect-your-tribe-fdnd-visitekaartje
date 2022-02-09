@@ -2,6 +2,7 @@
 
 :root {
   --dark-purple: #2e294e;
+  --black: #000;
   --light-purple: #be97c6;
   --purple: #8661c1;
   --pink: #efbcd5;
@@ -36,7 +37,7 @@ main {
   border-radius: 1rem;
   width: 100%;
   height: 100%;
-  transition: 0.4s ease;
+  transition: 1s ease;
   transform-style: preserve-3d;
 }
 
@@ -146,9 +147,9 @@ figure {
 }
 
 #card-back .circle {
-  height: 180px;
-  width: 180px;
-  background-image: url(../assets/picture.jpeg);
+  height: 12em;
+  width: 12em;
+  /* background-image: url(../assets/picture.jpeg); */
   background-position: 60% 45%;
   background-repeat: no-repeat;
   border-radius: 50%;
@@ -156,7 +157,20 @@ figure {
 
 figcaption {
   position: absolute;
-  bottom: 10px;
+  bottom: 1.5em;
   color: var(--white);
   font-weight: bold;
+}
+
+.error {
+  opacity: 0;
+  position: absolute;
+  bottom: 2em;
+  right: 4em;
+  color: var(--black);
+  background-color: var(--white);
+  padding: 0.2em 1.5em;
+  transition: 0.3s ease;
+  border-radius: 0.5em;
+  transform: translateX(4em);
 }
