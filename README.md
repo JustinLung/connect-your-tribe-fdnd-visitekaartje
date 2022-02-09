@@ -38,7 +38,7 @@ cd connect-your-tribe-fdnd-visitekaartje
 ```
 
 ## 🦕 Bronnen
-![Visitekaart V1](https://github.com/JustinLung/fdnd-visitekaartje-autonomous)
+[Visitekaart V1](https://github.com/JustinLung/fdnd-visitekaartje-autonomous)
 
 ## 🗿 Licentie
 
