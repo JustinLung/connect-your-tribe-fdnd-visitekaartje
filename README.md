@@ -40,7 +40,7 @@ cd connect-your-tribe-fdnd-visitekaartje
 ## 🦕 Bronnen
 ![Visitekaart V1](https://github.com/JustinLung/fdnd-visitekaartje-autonomous)
 
-## ⚜️ Licentie
+## 🗿 Licentie
 
 ![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
 
