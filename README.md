@@ -11,11 +11,8 @@
 - [Licentie](#licentie)
 
 ## 🏆 Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-In dit project wordt mijn eerste visitekaartje door geïtereerd met behulp van de Tribe Api.
-<!-- Voeg een mooie poster visual toe 📸 -->
 ![Visual](https://github.com/JustinLung/connect-your-tribe-fdnd-visitekaartje/blob/main/docs/mockup.png?raw=true)
-<!-- Voeg een link toe naar Github Pages 🌐-->
+In het eerste semester, heb ik een visitekaartje gemaakt met behulp van HTML, CSS & JS. In dit visitekaartje heb ik het eerste visitekaartje verbeterd. Hierbij wordt de data uit de Tribe API gehaald.
 [🌐 live](https://justinlung.student.fdnd.nl/)
 
 ## ⚽️ Kenmerken
