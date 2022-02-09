@@ -1,0 +1,28 @@
+const API_URL = 'https://tribe.api.fdnd.nl/v1';
+const nameEl = document.querySelector(".name");
+const backName = document.querySelector(".name-surname");
+const image = document.getElementById("profileImage");
+const bioEl = document.getElementById("bio");
+const githubHandleEL = document.getElementById("githubHandle");
+const card = document.querySelector("#card");
+
+getMember();
+card.addEventListener("click", function () {
+    this.classList.toggle("card-rotate")
+})
+
+async function getMember() {
+    const req = await fetch(`${API_URL}/member`)
+    console.log(req)
+    const member = await req.json()
+    nameEl.innerText = member.data[0].name;
+    backName.innerText = member.data[0].name + " " + member.data[0].surname
+    console.log(member.data)
+}
+
+async function fillMember() {
+    fetch(`${API_URL}/member`), {
+        method: "PATCH",
+
+    }
+}
