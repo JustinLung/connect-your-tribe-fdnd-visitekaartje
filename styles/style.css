@@ -55,6 +55,7 @@ main {
   align-items: center;
 
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 
   height: 100%;
   width: 100%;
@@ -102,6 +103,7 @@ main {
   border-radius: 1rem;
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   top: 0;
 
   width: 100%;
