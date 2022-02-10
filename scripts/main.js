@@ -33,7 +33,8 @@ async function getMember() {
 function render(data) {
     nameEl.innerText = data.data[0].name;
     backName.innerText = `${data.data[0].name} ${data.data[0].surname}`
-    githubHandleEL.href = data.data[0].githubHandle;
+    // githubHandleEL.href = data.data[0].githubHandle;
+    githubHandleEL.href = `https://github.com/${data.data[0].githubHandle}`;
     urlEL.href = data.data[0].url;
     bioEl.innerText = data.data[0].bio;
     image.src = data.data[0].avatar;
