@@ -6,6 +6,7 @@ const image = document.getElementById("profileImage");
 const bioEl = document.getElementById("bio");
 const githubHandleEL = document.getElementById("githubHandle");
 const urlEL = document.getElementById("url");
+
 const card = document.querySelector("#card");
 const loader = document.querySelector(".loader");
 const errorHandling = document.querySelector(".error");
@@ -18,11 +19,14 @@ card.addEventListener("click", function () {
 // FUNCTIONS
 async function getMember() {
     try {
-        preloader();
-        const req = await fetch(`${API_URL}/member`)
-        const member = await req.json();
+        const res = await fetch(`${API_URL}/member`)
+        if(res.ok === true) {
+            hidePreloader();
+        }
+        const member = await res.json()
         render(member)
-    } catch (err) {
+    }
+    catch (err) {
         error();
         throw new Error(err);
     }
@@ -39,7 +43,7 @@ function render(data) {
     loaded();
 }
 
-function preloader() {
+function hidePreloader() {
     setTimeout(() => {
         loader.style.opacity = 0;
     }, 2000)
