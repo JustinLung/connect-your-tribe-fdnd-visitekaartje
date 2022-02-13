@@ -10,6 +10,12 @@
   --white: #ffff;
 }
 
+*,
+html {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: var(--marine);
   font-family: "Inter", sans-serif;
@@ -176,4 +182,30 @@ figcaption {
   transition: 0.3s ease;
   border-radius: 0.5em;
   transform: translateX(4em);
+}
+
+noscript {
+  position: absolute;
+  background-color: var(--marine);
+  color: var(--pink);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  text-align: center;
+}
+
+noscript img {
+  max-width: 20em;
+}
+
+noscript h2 {
+  font-size: 1.8rem;
+}
+
+noscript p {
+  font-size: 1.3rem;
 }
