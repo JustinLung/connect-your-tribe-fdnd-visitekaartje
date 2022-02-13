@@ -7,6 +7,7 @@ const bioEl = document.getElementById("bio");
 const githubHandleEL = document.getElementById("githubHandle");
 const urlEL = document.getElementById("url");
 const card = document.querySelector("#card");
+const loader = document.querySelector(".loader");
 const errorHandling = document.querySelector(".error");
 
 getMember();
@@ -17,16 +18,12 @@ card.addEventListener("click", function () {
 // FUNCTIONS
 async function getMember() {
     try {
+        preloader();
         const req = await fetch(`${API_URL}/member`)
         const member = await req.json();
         render(member)
     } catch (err) {
-        errorHandling.style.opacity = 1;
-        errorHandling.style.transform = "translateX(0)";
-        setTimeout(() => {
-            errorHandling.style.opacity = 0
-            errorHandling.style.transform = "translateX(4em)";
-        }, 5000);
+        error();
     }
 }
 
@@ -38,4 +35,29 @@ function render(data) {
     urlEL.href = data.data[0].url;
     bioEl.innerText = data.data[0].bio;
     image.src = data.data[0].avatar;
+    loaded();
+}
+
+function preloader() {
+    setTimeout(() => {
+        loader.style.opacity = 0;
+    }, 2000)
+}
+
+function loaded() {
+    setTimeout(() => {
+        card.style.transition = ".3s ease"
+        card.style.opacity = 1;
+    }, 2100)
+}
+
+function error() {
+    setTimeout(() => {
+        errorHandling.style.opacity = 1;
+        errorHandling.style.transform = "translateX(0)";
+        setTimeout(() => {
+            errorHandling.style.opacity = 0
+            errorHandling.style.transform = "translateX(4em)";
+        }, 5000);
+    }, 2100)
 }
