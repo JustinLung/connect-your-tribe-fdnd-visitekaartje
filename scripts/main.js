@@ -24,6 +24,7 @@ async function getMember() {
         render(member)
     } catch (err) {
         error();
+        throw new Error(err);
     }
 }
 
