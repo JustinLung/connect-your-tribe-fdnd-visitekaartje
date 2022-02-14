@@ -254,6 +254,7 @@ noscript {
   align-items: center;
   gap: 1em;
   text-align: center;
+  z-index: 101;
 }
 
 noscript img {

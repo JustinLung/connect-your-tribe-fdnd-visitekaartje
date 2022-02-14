@@ -19,7 +19,7 @@ card.addEventListener("click", function () {
 // FUNCTIONS
 async function getMember() {
     try {
-        const res = await fetch(`${API_URL}/membrer`)
+        const res = await fetch(`${API_URL}/member`)
         const member = await res.json()
         render(member)
         hidePreloader();
