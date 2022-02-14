@@ -19,15 +19,14 @@ card.addEventListener("click", function () {
 // FUNCTIONS
 async function getMember() {
     try {
-        const res = await fetch(`${API_URL}/member`)
-        if(res.ok === true) {
-            hidePreloader();
-        }
+        const res = await fetch(`${API_URL}/membrer`)
         const member = await res.json()
         render(member)
+        hidePreloader();
     }
     catch (err) {
         error();
+        hidePreloader();
         throw new Error(err);
     }
 }
